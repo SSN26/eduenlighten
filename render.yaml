@@ -17,6 +17,10 @@ services:
         value: 10000
       - key: JWT_SECRET
         generateValue: true
+      - key: MONGODB_URI
+        sync: false
+      - key: CLIENT_URL
+        sync: false
 
   # ==================================================
   # 2. Frontend Web App (Next.js 16)
@@ -34,6 +38,10 @@ services:
         value: production
       - key: PORT
         value: 10000
-
       - key: NEXT_PUBLIC_API_URL
         sync: false
+      - key: INTERNAL_API_URL
+        fromService:
+          type: web
+          name: eduenlighten-api
+          property: host

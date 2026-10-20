@@ -8,7 +8,7 @@ const startServer = async () => {
   // Connect to Database
   await connectDB();
 
-  const server = app.listen(ENV.PORT, () => {
+  const server = app.listen(ENV.PORT, '0.0.0.0', () => {
     console.log(`====================================================`);
     console.log(`🎓 EduEnlighten Digital School Backend running!`);
     console.log(`🌐 Port: ${ENV.PORT}`);
