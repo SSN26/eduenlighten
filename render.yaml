@@ -1,0 +1,50 @@
+services:
+  # ==================================================
+  # Backend API Service (Express + TypeScript)
+  # ==================================================
+  - type: web
+    name: eduenlighten-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: https://eduenlighten-web.onrender.com
+      - key: MONGODB_URI
+        sync: false # Set your MongoDB Atlas URI in Render Dashboard (optional: falls back to in-memory store)
+
+  # ==================================================
+  # Frontend Client Service (Next.js 16)
+  # ==================================================
+  - type: web
+    name: eduenlighten-web
+    runtime: node
+    plan: free
+    rootDir: client
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: INTERNAL_API_URL
+        fromService:
+          type: web
+          name: eduenlighten-api
+          property: host
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          type: web
+          name: eduenlighten-api
+          property: host
