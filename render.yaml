@@ -1,36 +1,71 @@
 services:
-  # ==================================================
+  # ==========================================
   # 1. Backend REST API (Express + TypeScript)
-  # ==================================================
+  # ==========================================
   - type: web
     name: eduenlighten-api
     runtime: node
     plan: free
     rootDir: server
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /api/health
+
     envVars:
       - key: NODE_ENV
         value: production
+
       - key: PORT
-        value: 10000
+        value: "10000"
+
+      - key: MONGODB_URI
+        sync: false
+
       - key: JWT_SECRET
         generateValue: true
 
-  # ==================================================
+      - key: JWT_EXPIRES_IN
+        value: 7d
+
+      - key: COOKIE_NAME
+        value: eduenlighten_token
+
+      - key: CLIENT_URL
+        sync: false
+
+      - key: EMAIL_SERVICE
+        value: console
+
+      - key: LIVE_CLASS_PROVIDER
+        value: jitsi
+
+      - key: PAYMENT_PROVIDER
+        value: mock_paynow
+
+      - key: STORAGE_DRIVER
+        value: local
+
+      - key: UPLOAD_DIR
+        value: ./uploads
+
+  # ==========================================
   # 2. Frontend Web App (Next.js 16)
-  # ==================================================
+  # ==========================================
   - type: web
     name: eduenlighten-web
     runtime: node
     plan: free
     rootDir: client
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /
+
     envVars:
       - key: NODE_ENV
         value: production
+
       - key: PORT
-        value: 10000
+        value: "10000"
+
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
