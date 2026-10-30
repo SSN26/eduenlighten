@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
       apiTarget = `https://${apiTarget}`;
     }
 
+    // Strip trailing slashes to avoid double-slash route issues like //api/...
+    apiTarget = apiTarget.replace(/\/+$/, '');
+
     return [
       {
         source: '/api/:path*',

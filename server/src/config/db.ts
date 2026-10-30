@@ -12,15 +12,17 @@ export const connectDB = async (): Promise<boolean> => {
 
   try {
     const conn = await mongoose.connect(ENV.MONGODB_URI, {
-      serverSelectionTimeoutMS: 2000,
-      connectTimeoutMS: 2000,
+      serverSelectionTimeoutMS: 10000,
+      connectTimeoutMS: 10000,
     });
     isConnected = true;
     console.log(`[Database] MongoDB connected successfully to host: ${conn.connection.host} (${conn.connection.name})`);
     return true;
   } catch (err: any) {
-    console.warn(`[Database Warning] Could not connect to MongoDB at ${ENV.MONGODB_URI}: ${err.message}`);
-    console.warn(`[Database Notice] Please ensure MongoDB is running or provide a valid MONGODB_URI in server/.env (e.g. MongoDB Atlas cluster).`);
+    const safeUri = ENV.MONGODB_URI.replace(/\/\/([^:]+):([^@]+)@/, '//$1:***@');
+    console.warn(`[Database Warning] Could not connect to MongoDB at ${safeUri}: ${err.message}`);
+    console.warn(`[Database Notice] Please ensure MongoDB is running or provide a valid MONGODB_URI (e.g. MongoDB Atlas cluster).`);
+    console.warn(`[Database Notice] For MongoDB Atlas deployments on Render, ensure Network Access allows 0.0.0.0/0 (anywhere) since cloud hosting IPs are dynamic.`);
     return false;
   }
 };

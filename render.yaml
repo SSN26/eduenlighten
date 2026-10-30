@@ -15,12 +15,28 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: NODE_VERSION
+        value: 20.18.0
       - key: JWT_SECRET
         generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: COOKIE_NAME
+        value: eduenlighten_token
       - key: MONGODB_URI
         sync: false
       - key: CLIENT_URL
         sync: false
+      - key: EMAIL_SERVICE
+        value: console
+      - key: LIVE_CLASS_PROVIDER
+        value: jitsi
+      - key: PAYMENT_PROVIDER
+        value: mock_paynow
+      - key: STORAGE_DRIVER
+        value: local
+      - key: UPLOAD_DIR
+        value: ./uploads
 
   # ==================================================
   # 2. Frontend Web App (Next.js 16)
@@ -31,17 +47,16 @@ services:
     plan: free
     rootDir: client
     buildCommand: npm install --include=dev && npm run build
-    startCommand: npm run start
+    startCommand: npm run start -- -p 10000
     healthCheckPath: /
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
+      - key: NODE_VERSION
+        value: 20.18.0
       - key: NEXT_PUBLIC_API_URL
         sync: false
-      - key: INTERNAL_API_URL
-        fromService:
-          type: web
-          name: eduenlighten-api
-          property: host
+      - key: NEXT_TELEMETRY_DISABLED
+        value: 1
