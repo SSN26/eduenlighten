@@ -17,6 +17,7 @@ import {
   Lock,
   DollarSign,
   AlertCircle,
+  Sparkles,
 } from 'lucide-react';
 import { apiFetch } from '@/lib/api';
 
@@ -239,6 +240,31 @@ export default function CourseDetailPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* 24/7 AI Teacher Tutor Banner for Course */}
+      <div className="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/60 via-slate-900/90 to-teal-950/60 border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center shrink-0">
+            <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <span>24/7 AI Subject Teacher Available for this Course</span>
+              <span className="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-300 font-extrabold uppercase">Instant</span>
+            </h3>
+            <p className="text-xs text-slate-300">
+              Need personalized homework help or step-by-step past paper walkthroughs? Practice 1-on-1 with our AI Teacher Agents anytime.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/ai-teachers"
+          className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold shrink-0 transition-all flex items-center gap-1.5"
+        >
+          <span>Ask AI Teacher</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
       </div>
 
       {/* Tabs: Syllabus / Outcomes / Instructor */}

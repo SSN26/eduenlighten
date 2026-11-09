@@ -22,6 +22,7 @@ import analyticsRouter from './modules/analytics/analytics.routes.js';
 import supportRouter from './modules/support/support.routes.js';
 import institutionsRouter from './modules/institutions/institutions.routes.js';
 import teachersRouter from './modules/teachers/teachers.routes.js';
+import aiTeachersRouter from './modules/ai-teachers/ai-teachers.routes.js';
 
 export const createApp = (): Express => {
   const app = express();
@@ -93,6 +94,8 @@ export const createApp = (): Express => {
         liveClasses: true,
         certificates: true,
         payments: true,
+        aiTeacherAgents: true,
+        interactiveClassroom24x7: true,
       },
     });
   });
@@ -101,6 +104,7 @@ export const createApp = (): Express => {
   app.use('/api/auth', authRouter);
   app.use('/api/institutions', institutionsRouter);
   app.use('/api/teachers', teachersRouter);
+  app.use('/api/ai-teachers', aiTeachersRouter);
   app.use('/api/teacher-applications', teacherApplicationsRouter);
   app.use('/api/programmes', programmesRouter);
   app.use('/api/courses', coursesRouter);

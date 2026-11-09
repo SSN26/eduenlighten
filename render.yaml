@@ -27,6 +27,8 @@ services:
         sync: false
       - key: CLIENT_URL
         sync: false
+      - key: GEMINI_API_KEY
+        sync: false
       - key: EMAIL_SERVICE
         value: console
       - key: LIVE_CLASS_PROVIDER

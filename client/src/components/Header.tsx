@@ -17,6 +17,7 @@ import {
   Code2,
   MapPin,
   Volume2,
+  Sparkles,
 } from 'lucide-react';
 import { apiFetch } from '@/lib/api';
 
@@ -296,6 +297,20 @@ export default function Header() {
               )}
             </div>
 
+            {/* AI Teacher Agents 24/7 */}
+            <Link
+              href="/ai-teachers"
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full border transition-all ${
+                pathname.startsWith('/ai-teachers')
+                  ? 'bg-gradient-to-r from-cyan-500/25 to-teal-500/25 border-cyan-400 text-white font-bold shadow-md shadow-cyan-500/20'
+                  : 'bg-cyan-950/40 border-cyan-500/30 text-cyan-300 hover:text-white hover:border-cyan-400'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+              <span>AI Teachers</span>
+              <span className="text-[9px] px-1 py-0.2 rounded bg-cyan-400/20 text-cyan-200 border border-cyan-400/30 uppercase tracking-wider font-extrabold">24/7</span>
+            </Link>
+
             <Link
               href="/for-schools"
               className={`transition-colors ${
@@ -505,6 +520,18 @@ export default function Header() {
               </div>
             )}
           </div>
+
+          <Link
+            href="/ai-teachers"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between px-3 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 font-bold hover:bg-cyan-500/20"
+          >
+            <span className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-amber-300" />
+              <span>AI Teacher Agents</span>
+            </span>
+            <span className="text-[9px] px-1.5 py-0.5 rounded bg-cyan-400/20 text-cyan-200 uppercase font-extrabold">24/7 Live</span>
+          </Link>
 
           <Link
             href="/for-schools"

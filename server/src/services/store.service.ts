@@ -52,11 +52,17 @@ export interface IndependentTeacher {
   _id: string;
   userId: string;
   name: string;
+  title?: string;
   email: string;
   avatar: string;
   headline: string;
   bio: string;
   isIndependentTeacher: boolean;
+  isAIAgent?: boolean;
+  aiBadge?: string;
+  aiPersonaId?: string;
+  aiTeachingModes?: string[];
+  suggestedQuestions?: string[];
   institutionAffiliation?: string;
   qualifications: {
     degree: string;
@@ -559,6 +565,245 @@ class StoreService {
         { id: 'r-9', studentName: 'Mufaro C.', rating: 5, comment: 'Ms. Mataruse turned my D in English essay writing into an A in just one term. Her feedback on creative writing is priceless.', date: '2026-10-12' },
       ],
     },
+    // ==========================================
+    // AI TEACHER AGENTS (24/7 Available)
+    // ==========================================
+    {
+      _id: 't-ai-001',
+      userId: 'usr-ai-chiware',
+      name: 'Dr. Farai Chiware AI',
+      email: 'ai.chiware@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 AI Master Teacher in Advanced Cambridge Mathematics & Algorithms',
+      bio: 'Intelligent AI educator trained on 12+ years of Cambridge IGCSE & A-Level past papers. Provides step-by-step calculus proofs, quadratic equation breakdowns, and recursive programming guidance.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-chiware',
+      aiTeachingModes: ['academic', 'socratic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'Walk me through the quadratic formula step by step.',
+        'How do I differentiate trigonometric functions using Chain Rule?',
+        'Give me a Cambridge 0580 coordinate geometry past paper question.',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'PhD Computational Mathematics (AI Synthesized)', institution: 'Cambridge Mathematical Tripos Architecture', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 15,
+      curriculumSpecialties: ['Cambridge International', 'Professional Digital Skills'],
+      authorizedSubjects: ['Cambridge Mathematics (0580)', 'Pure Math 9709', 'Physics (0625)', 'Python Programming', 'Algorithms'],
+      languages: ['English', 'Shona'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 14200,
+      rating: 4.99,
+      reviewsCount: 310,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-1', studentName: 'Kundai M.', rating: 5, comment: 'Dr. Chiware AI explained integration by parts in 3 minutes. The LaTeX equations were so clear!', date: '2026-11-02' },
+        { id: 'r-ai-2', studentName: 'Panashe T.', rating: 5, comment: 'The exam-rigor mode points out exact marking scheme errors. Incredible practice tool.', date: '2026-11-06' },
+      ],
+    },
+    {
+      _id: 't-ai-002',
+      userId: 'usr-ai-moyo',
+      name: 'Mrs. Grace Moyo AI',
+      title: 'ZIMSEC National O-Level & A-Level Mathematics Coach',
+      email: 'ai.moyo@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 AI Master Coach in ZIMSEC 4004 Math, Matrices & Combined Science',
+      bio: 'Equipped with deep ZIMSEC marking criteria for transformation matrices, circle theorems, quadratic graphs, and combined science. Patient, clear, and high-energy encouragement.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-moyo',
+      aiTeachingModes: ['academic', 'socratic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'How do I find the transformation matrix for reflection in y = -x?',
+        'Prove the circle theorem: angle at center is twice angle at circumference.',
+        'Explain the light and dark stages of photosynthesis.',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'Master of Mathematics Education (ZIMSEC Specialized)', institution: 'EduEnlighten National Pedagogical Model', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 18,
+      curriculumSpecialties: ['ZIMSEC Curriculum'],
+      authorizedSubjects: ['ZIMSEC Mathematics 4004', 'Combined Science 4003', 'Biology O-Level', 'Transformation Geometry'],
+      languages: ['English', 'Shona', 'Ndebele'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 19800,
+      rating: 4.98,
+      reviewsCount: 420,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-3', studentName: 'Vimbai S.', rating: 5, comment: 'Mrs. Moyo AI broke down vectors and matrices so well. I finally scored an A in my mock test!', date: '2026-11-04' },
+      ],
+    },
+    {
+      _id: 't-ai-005',
+      userId: 'usr-ai-ndlovu',
+      name: 'Dr. Ruvimbo Ndlovu AI',
+      email: 'ai.ndlovu@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 AI Chemistry Specialist in Mole Calculations, Redox & Organic Synthesis',
+      bio: 'Expert chemistry AI persona specializing in stoichiometry, titration curves, esterification, and Cambridge/ZIMSEC practical paper alternative questions.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-ndlovu',
+      aiTeachingModes: ['academic', 'socratic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'How do I calculate mole ratios from titration volume and concentration?',
+        'Explain Le Chatelier’s principle with pressure changes in Haber process.',
+        'What is the difference between addition and condensation polymerization?',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'PhD Chemical Synthesis & Pedagogy', institution: 'EduEnlighten Science Lab AI Engine', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 14,
+      curriculumSpecialties: ['Cambridge International', 'ZIMSEC Curriculum'],
+      authorizedSubjects: ['Cambridge Chemistry (0620/9701)', 'ZIMSEC Chemistry 5070', 'Cambridge Biology (0610/9700)', 'Combined Science'],
+      languages: ['English', 'Ndebele', 'Shona'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 11400,
+      rating: 4.97,
+      reviewsCount: 260,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-4', studentName: 'Tinashe K.', rating: 5, comment: 'Balancing redox reactions was impossible for me until Dr. Ndlovu AI demonstrated oxidation numbers step by step.', date: '2026-11-05' },
+      ],
+    },
+    {
+      _id: 't-ai-004',
+      userId: 'usr-ai-sithole',
+      name: 'Instructor Melody Sithole AI',
+      email: 'ai.sithole@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 AI Vocational Solar PV & Clean Energy Electrical Instructor',
+      bio: 'Delivers real-world electrical load audits, battery sizing, inverter calculations, cable voltage drop, and electrical safety certifications.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-sithole',
+      aiTeachingModes: ['academic', 'socratic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'How do I size an off-grid solar system for a 4,500 Wh daily load?',
+        'Calculate battery bank capacity for a 48V LiFePO4 battery at 80% DoD.',
+        'What cable gauge should I use to keep voltage drop under 3%?',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'Master Solar Energy & Electrical Engineering AI Persona', institution: 'Renewable TVET Master Guild', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 12,
+      curriculumSpecialties: ['Vocational Trades', 'Professional Digital Skills'],
+      authorizedSubjects: ['Off-grid Solar PV Design', 'Battery Inverter Sizing', 'Electrical Wiring & Protection', 'Trade Test Safety'],
+      languages: ['English', 'Shona'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 9800,
+      rating: 4.96,
+      reviewsCount: 195,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-5', studentName: 'Simbarashe D.', rating: 5, comment: 'Her explanation of Peak Sun Hours and inverter surge factors helped me design my first real residential solar system.', date: '2026-11-07' },
+      ],
+    },
+    {
+      _id: 't-ai-006',
+      userId: 'usr-ai-vance',
+      name: 'Sensei Alex Vance AI',
+      email: 'ai.vance@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 AI Full-Stack Mentor in Next.js 16, React 19 & TypeScript',
+      bio: 'Code-first mentor specializing in modern full-stack web applications, REST APIs, React Server Components, and database schema design.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-vance',
+      aiTeachingModes: ['academic', 'socratic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'Explain React Server Components vs Client Components in Next.js 16.',
+        'Show me how to build a type-safe API client in TypeScript.',
+        'How do I manage authentication cookies with Express and Next.js rewrites?',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'Principal Full Stack AI Architect', institution: 'Modern Open-Source Systems Academy', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 16,
+      curriculumSpecialties: ['Professional Digital Skills'],
+      authorizedSubjects: ['Next.js 16 & React 19', 'TypeScript', 'Node.js & Express REST APIs', 'Tailwind CSS', 'System Architecture'],
+      languages: ['English'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 16500,
+      rating: 4.99,
+      reviewsCount: 380,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-6', studentName: 'Tendai M.', rating: 5, comment: 'Sensei Vance AI helped me debug a nasty race condition in my React hook. The cleanest code explanations ever!', date: '2026-11-08' },
+      ],
+    },
+    {
+      _id: 't-ai-007',
+      userId: 'usr-ai-socrates',
+      name: 'Master Socrates AI',
+      email: 'ai.socrates@eduenlighten.ac',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80',
+      headline: '24/7 Socratic Essay, Rhetoric & Critical Thinking Master Coach',
+      bio: 'Guides learners through structured philosophical questioning, thesis formulation, discursive essay writing, and literary text analysis.',
+      isIndependentTeacher: true,
+      isAIAgent: true,
+      aiBadge: '24/7 AI Master Teacher',
+      aiPersonaId: 'ai-socrates',
+      aiTeachingModes: ['socratic', 'academic', 'exam_rigor', 'tldr', 'quiz'],
+      suggestedQuestions: [
+        'Help me structure a Band 9 argumentative essay on technology in education.',
+        'Ask me probing Socratic questions on power and corruption in Animal Farm.',
+        'How do I analyze tone, mood, and dramatic irony in poetry?',
+      ],
+      institutionAffiliation: 'EduEnlighten AI Faculty',
+      qualifications: [
+        { degree: 'Doctorate in Classical Rhetoric & Literature', institution: 'EduEnlighten Classical Humanities Academy', yearCompleted: 2026 },
+      ],
+      teachingExperienceYears: 20,
+      curriculumSpecialties: ['Cambridge International', 'ZIMSEC Curriculum', 'Humanities & Leadership'],
+      authorizedSubjects: ['English Language (1123/0500)', 'Literature in English', 'Argumentative & Discursive Essays', 'Critical Thinking'],
+      languages: ['English'],
+      hourlyRateUsd: 0,
+      sessionBookingPriceUsd: 0,
+      totalStudentsTaught: 12200,
+      rating: 4.98,
+      reviewsCount: 290,
+      safeguardingVetted: true,
+      availabilitySchedule: [
+        { dayOfWeek: 'Always Available (24/7)', slots: ['Instant 1-on-1 Studio', 'Anytime Day or Night', 'Zero Wait Time'] },
+      ],
+      reviews: [
+        { id: 'r-ai-7', studentName: 'Rudo C.', rating: 5, comment: 'Master Socrates doesn’t just give you the answer—he teaches you how to think. My Cambridge essay marks jumped from C to A*!', date: '2026-11-07' },
+      ],
+    },
   ];
 
   private bookings: BookingRecord[] = [
@@ -731,8 +976,15 @@ class StoreService {
     subject?: string;
     maxRate?: number;
     search?: string;
+    type?: string;
   }): IndependentTeacher[] {
     let list = [...this.independentTeachers];
+
+    if (filters?.type === 'ai') {
+      list = list.filter((t) => t.isAIAgent === true);
+    } else if (filters?.type === 'human') {
+      list = list.filter((t) => !t.isAIAgent);
+    }
 
     if (filters?.curriculum && filters.curriculum !== 'all') {
       const curr = filters.curriculum.toLowerCase();

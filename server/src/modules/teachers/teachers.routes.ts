@@ -8,13 +8,14 @@ const router = Router();
 
 // GET /api/teachers - List independent teachers with search and filters
 router.get('/', async (req: Request, res: Response) => {
-  const { curriculum, subject, maxRate, search } = req.query;
+  const { curriculum, subject, maxRate, search, type } = req.query;
 
   const teachers = store.getAllIndependentTeachers({
     curriculum: curriculum as string,
     subject: subject as string,
     maxRate: maxRate ? Number(maxRate) : undefined,
     search: search as string,
+    type: type as string,
   });
 
   return res.status(200).json({

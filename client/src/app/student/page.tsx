@@ -256,6 +256,30 @@ export default function StudentDashboardPage() {
 
         {/* Right Column: Live Classes & Certificates */}
         <div className="space-y-8">
+          {/* 24/7 AI Teacher Agents Card */}
+          <div className="glass-card rounded-2xl p-6 space-y-4 border border-cyan-500/30 bg-gradient-to-b from-cyan-950/30 to-slate-900/60 shadow-lg">
+            <div className="flex items-center justify-between">
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+                <span>24/7 AI Tutors Online</span>
+              </h3>
+              <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold uppercase">
+                Instant
+              </span>
+            </div>
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Stuck on a tricky homework question or past exam paper? Start an instant 1-on-1 tutoring session with your AI teacher agent right now.
+            </p>
+
+            <Link
+              href="/ai-teachers"
+              className="btn-primary w-full py-2.5 text-xs text-center block font-bold shadow-md shadow-cyan-500/20"
+            >
+              Open AI Tutoring Studio →
+            </Link>
+          </div>
+
           {/* Live Classes Card */}
           <div className="glass-card rounded-2xl p-6 space-y-4 border border-cyan-500/25">
             <h3 className="text-base font-bold text-white flex items-center gap-2">

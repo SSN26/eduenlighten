@@ -23,4 +23,5 @@ export const ENV = {
   PAYNOW_INTEGRATION_KEY: process.env.PAYNOW_INTEGRATION_KEY || 'demo_paynow_key',
   STORAGE_DRIVER: process.env.STORAGE_DRIVER || 'local',
   UPLOAD_DIR: process.env.UPLOAD_DIR || path.join(process.cwd(), 'uploads'),
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY || '',
 };
